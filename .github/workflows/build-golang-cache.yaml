@@ -89,7 +89,7 @@ jobs:
         shell: bash
         run: |
           sudo mkdir -p /mnt/go/src/github.com/cilium
-          sudo chown $USER:$USER /mnt/go/src/github.com/cilium
+          sudo chown $USER:$USER -R /mnt/go
           mv cilium-checkout /mnt/go/src/github.com/cilium/cilium
 
       # Load Golang cache build from GitHub
