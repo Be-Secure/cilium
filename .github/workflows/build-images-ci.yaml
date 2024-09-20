@@ -178,8 +178,6 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           platforms: ${{ matrix.platforms }}
-          cache-from: type=local,src=/tmp/docker-cache
-          cache-to: type=local,dest=/tmp/docker-cache,mode=max
           tags: |
             quay.io/${{ env.QUAY_ORGANIZATION_DEV }}/${{ matrix.name }}-ci:${{ steps.tag.outputs.tag }}
           target: release
@@ -201,8 +199,6 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           platforms: linux/amd64
-          cache-from: type=local,src=/tmp/docker-cache
-          cache-to: type=local,dest=/tmp/docker-cache,mode=max
           tags: |
             quay.io/${{ env.QUAY_ORGANIZATION_DEV }}/${{ matrix.name }}-ci:${{ steps.tag.outputs.tag }}-race
           target: release
@@ -220,8 +216,6 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           platforms: linux/amd64
-          cache-from: type=local,src=/tmp/docker-cache
-          cache-to: type=local,dest=/tmp/docker-cache,mode=max
           tags: |
             quay.io/${{ env.QUAY_ORGANIZATION_DEV }}/${{ matrix.name }}-ci:${{ steps.tag.outputs.tag }}-unstripped
           target: release
